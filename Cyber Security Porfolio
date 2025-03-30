@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        header {
+            background: #161b22;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            color: #58a6ff;
+        }
+        pre {
+            background: #161b22;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #161b22;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cybersecurity Portfolio</h1>
+        <p>Advanced Threat Detection System Implementation</p>
+    </header>
+    
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Cyber threats are evolving rapidly, requiring a proactive approach to security monitoring. This project enhances an Enterprise Threat Detection System using SIEM, custom threat-hunting rules, and automated responses.</p>
+    </section>
+    
+    <section id="challenges">
+        <h2>Challenges in Threat Detection</h2>
+        <ul>
+            <li>Delayed Incident Response</li>
+            <li>False Positives and Alert Fatigue</li>
+            <li>Lack of Automated Responses</li>
+            <li>Limited Threat Intelligence Integration</li>
+        </ul>
+    </section>
+    
+    <section id="solution">
+        <h2>Solution: Enhancing Threat Detection</h2>
+        <h3>SIEM Integration</h3>
+        <p>Configured Splunk & IBM QRadar to collect logs from firewalls, IDS/IPS, and cloud services.</p>
+        
+        <h3>Custom Log Correlation Rules</h3>
+        <pre>
+index=security_logs source="windows_auth.log" EventCode=4625
+| stats count by User, src_ip
+| where count > 5
+        </pre>
+        
+        <h3>Automated Incident Response</h3>
+        <pre>
+import requests
+firewall_api = "https://firewall.example.com/api/block"
+malicious_ip = "192.168.1.100"
+requests.post(firewall_api, data={'ip': malicious_ip})
+print(f"Blocked IP: {malicious_ip}")
+        </pre>
+    </section>
+    
+    <section id="results">
+        <h2>Results & Impact</h2>
+        <ul>
+            <li>40% reduction in response time</li>
+            <li>30% increase in detection accuracy</li>
+            <li>Improved SOC efficiency</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Want to See the Full Project?</h2>
+        <p><a href="https://github.com/yourusername/project-repo">GitHub Repository</a></p>
+        <p><a href="https://www.linkedin.com/in/yourprofile">Connect on LinkedIn</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Cybersecurity Portfolio</p>
+    </footer>
+</body>
+</html>
